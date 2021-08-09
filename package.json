@@ -1,0 +1,38 @@
+{
+  "name": "@jboxman/asciidoc-validate-yaml",
+  "version": "1.0.0",
+  "description": "Validate the YAML in your code listing blocks.",
+  "main": "lib/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "asciidoc-validate-yaml": "./asciidoc-validate-yaml"
+  },
+  "keywords": [
+    "asciidoc",
+    "adoc",
+    "yaml",
+    "asciidoctor"
+  ],
+  "author": "Jason Boxman <jasonb@edseek.com> (http://linkedin.com/in/jboxman)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jboxman/asciidoc-validate-yaml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jboxman/asciidoc-validate-yaml/issues"
+  },
+  "homepage": "http://edseek.com/docs/projects/asciidoc-validate-yaml/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "asciidoctor": "^2.2.5",
+    "commander": "^8.1.0",
+    "ent": "^2.2.0",
+    "js-yaml": "^4.1.0",
+    "striptags": "^3.2.0"
+  }
+}
