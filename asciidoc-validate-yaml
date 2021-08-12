@@ -2,4 +2,11 @@
 
 const cli = require('./lib/cli');
 
-cli();
+async function start() {
+  try {
+    await cli();
+  }
+  catch(e) {}
+}
+
+start();

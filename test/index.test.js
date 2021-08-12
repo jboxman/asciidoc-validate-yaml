@@ -47,3 +47,39 @@ describe('#pairAttributes', async assert => {
     expected: 'Attributes: key=value'
   });
 });
+
+describe('CLI childprocess', async assert => {
+  let error;
+  let stdout;
+  let stderr;
+  let exitcode;
+
+  try {
+    ({ error, stdout, stderr } = await exec(`echo ./test/fixtures/invalid.adoc | ${bin} --stdin`));
+  }
+  catch(err) {
+    ({ error, stdout, stderr, code: exitcode } = err);
+  }
+
+  assert({
+    given: 'AsciiDoc with invalid YAML',
+    should: 'exit with a non-zero status code',
+    actual: exitcode,
+    expected: 1
+  });
+
+  try {
+    ({ error, stdout, stderr } = await exec(`echo ./test/fixtures/valid.adoc | ${bin} --stdin`));
+  }
+  catch(err) {
+    ({ error, stdout, stderr, code: exitcode } = err);
+  }
+
+  assert({
+    given: 'AsciiDoc with valid YAML',
+    should: 'report success',
+    actual: /OK/.test(stdout.trim()),
+    expected: true
+  });
+
+});
