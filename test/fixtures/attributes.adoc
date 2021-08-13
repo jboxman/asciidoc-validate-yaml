@@ -1,0 +1,10 @@
+= Attributes
+
+[source,yaml]
+----
+- key1
+  key2
+ifdef::invalid[]
+key3
+endif::invalid[]
+----
