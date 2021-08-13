@@ -4,7 +4,7 @@
   "description": "Validate the YAML in your code listing blocks.",
   "main": "lib/cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape test/**/*.test.js"
   },
   "bin": {
     "asciidoc-validate-yaml": "./asciidoc-validate-yaml"
