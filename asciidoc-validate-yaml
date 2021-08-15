@@ -6,7 +6,9 @@ async function start() {
   try {
     await cli();
   }
-  catch(e) {}
+  catch(e) {
+    console.log(e.message);
+  }
 }
 
 start();
