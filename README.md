@@ -33,6 +33,29 @@ bigKey: some text <1>
 <1> This describes the key
 ```
 
+## Usage
+
+The help output describes the available options.
+
+```
+Usage: asciidoc-validate-yaml [options]
+
+Validate YAML listing blocks in Asciidoc files
+
+Options:
+  -a, --attributes [attributes...]  Optional: Attributes such as product-version=1
+  --pass                            Always succeed regardless of any validation failures (default: false)
+  --stdin                           Read file list from stdin instead of _topic_map.yml (default: false)
+  --topic <path>                    Optional: Path to ascii_binder _topic_map.yml file
+  -h, --help                        display help for command
+```
+
+## Alternatives
+
+You can use the AsciiDoc `include` directive to include YAML files instead of including
+YAML content directly in an AsciiDoc file. In such cases, you can validate the YAML
+directly without having to parse the AsciiDoc first.
+
 ## Known issues
 
 For known issues, refer to [GitHub](https://github.com/jboxman/asciidoc-validate-yaml/issues).
