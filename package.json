@@ -1,6 +1,6 @@
 {
   "name": "@jboxman/asciidoc-validate-yaml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validate the YAML in your code listing blocks.",
   "main": "lib/cli.js",
   "scripts": {
