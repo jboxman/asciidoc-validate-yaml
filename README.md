@@ -7,9 +7,21 @@ This tool validates the syntax of YAML in AsciiDoc files.
 When writing documentation, it is vital that any YAML samples presented to a user are valid.
 Because AsciiDoc is a structured, plain text documentation format, it is possible to extract and validate YAML.
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/download/) >= 10.x
+
+Or you might want to install Node.js using [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) or some other version manager.
+
+## Installation
+
+To install the application, complete the following step:
+
+- `npm i -g @jboxman/asciidoc-validate-yaml`
+
 ## Requirements
 
-Each YAML block must be placed within a listing block with `yaml` syntax highlighting.
+The YAML source must be placed within a listing block with `yaml` syntax highlighting.
 
 ```
 [source,yaml]
@@ -50,6 +62,28 @@ Options:
   -h, --help                        display help for command
 ```
 
+For example, the following is the most common usage:
+
+```
+$ find . -type f -name '*.adoc' | asciidoc-validate-yaml --stdin
+```
+
+Example output:
+
+```
+Scanning .../networking/configuring-ipfailover.adoc
+modules/nw-ipfailover-configuring-vrrp-preemption.adoc [18]: OK
+modules/nw-ipfailover-configuring-more-than-254.adoc [28]: OK
+modules/nw-ipfailover-configuration.adoc [40]: OK
+modules/nw-ipfailover-configuring-check-notify-scripts.adoc [76]: OK
+Scanning .../networking/multiple_networks/assigning-a-secondary-network-to-a-vrf.adoc
+modules/cnf-assigning-a-secondary-network-to-a-vrf.adoc [39]: OK
+Scanning .../networking/multiple_networks/edit-additional-network.adoc
+Scanning .../networking/multiple_networks/configuring-multi-network-policy.adoc
+modules/nw-multi-network-policy-differences.adoc [6]: OK
+modules/nw-multi-network-policy-differences.adoc [16]: OK
+```
+
 ## Alternatives
 
 You can use the AsciiDoc `include` directive to include YAML files instead of including
@@ -58,4 +92,4 @@ directly without having to parse the AsciiDoc first.
 
 ## Known issues
 
-For known issues, refer to [GitHub](https://github.com/jboxman/asciidoc-validate-yaml/issues).
+For known issues, see [GitHub](https://github.com/jboxman/asciidoc-validate-yaml/issues).
